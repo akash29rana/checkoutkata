@@ -1,16 +1,18 @@
 
 In this project there are two types of login ShopOwner and Customer.
 
-     ShopOwner Features:
-          - He can make/edit a new item ( for now item will be A-Z ).
-          - He can make/edit new discount prices.
+ShopOwner Features: 
+1. He can make/edit a new item ( for now item will be A-Z ).
+2. He can make/edit new discount prices.
 
-     Customer Features:
-          - He can see discount on each item.
-          - He can add item to cart as many as he want.
-          - He can see the total price after all the discount applied.
-     
-For now item can contain any number of discounts available.
+Customer Features:
+1. He can see discount on each item.
+2. He can add item to cart as many as he want.
+3. He can see the total price after all the discount applied.
+
+Important:
+1. For now item can contain any number of discounts available.
+2. You can choose more than one discount for a single item.
 
 
 How to install dependencies:

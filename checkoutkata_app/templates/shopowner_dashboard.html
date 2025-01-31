@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Items List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        .logout-btn {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                max-width: 200px;
+            }
+       </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Items List</h1>
+        <a class="btn btn-danger logout-btn" href="{% url 'logout' %}">Logout</a>
+        
         <a href="{% url 'create_item' %}" class="btn btn-primary mb-3">Add New Item</a>
         <a href="{% url 'create_discount' %}" class="btn btn-secondary mb-3">Add New Discount</a>
-
+        <h1>Items List</h1>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -39,6 +48,27 @@
                         </td>
                         <td>
                             <a href="{% url 'edit_item' item.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+        <h1>Discount List</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Discount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in discounts %}
+                    <tr>
+                        <td>{{ item.quantity }} items for {{ item.price }}</td>
+                        <td>
+                            <a href="{% url 'edit_discount' item.pk %}" class="btn btn-warning btn-sm">Edit</a>
                         </td>
                     </tr>
                 {% endfor %}

@@ -71,7 +71,8 @@ def customer_dashboard(request):
 @shopowner_required
 def shopowner_dashboard(request):
     items = Item.objects.all()
-    return render(request, 'shopowner_dashboard.html', {'items': items})
+    discounts = Discount.objects.all() 
+    return render(request, 'shopowner_dashboard.html', {'items': items,'discounts': discounts})
 
 @shopowner_required
 def create_item(request):
